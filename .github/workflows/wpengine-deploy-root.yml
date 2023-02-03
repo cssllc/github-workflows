@@ -20,6 +20,9 @@ jobs:
   backup:
     runs-on: ubuntu-latest
     if: false
+    steps:
+
+    - run: echo "Placeholder for unnecessary backup job"
 
   deploy:
     runs-on: ubuntu-latest
