@@ -1,0 +1,49 @@
+name: Deploy themes to WP Engine
+
+on:
+  workflow_call:
+    inputs:
+      env_install:
+        type: string
+        required: true
+      env_ssh_host:
+        type: string
+        required: true
+    secrets:
+      known_hosts:
+        required: true
+      wpengine_ssh_key_private:
+        required: true
+
+jobs:
+
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: benoitchantre/setup-ssh-authentication-action@1.0.0
+      with:
+        private-key: ${{ secrets.wpengine_ssh_key_private }}
+        private-key-name: deploy-wpengine
+        known-hosts: ${{ secrets.known_hosts }}
+
+    - run: ssh -i ~/.ssh/deploy-wpengine ${{ inputs.env_install }}@${{ inputs.env_ssh_host }} 'zip -r --filesync --test --display-bytes --display-counts sites/${{ inputs.env_install }}/_wpeprivate/backup-plugins.zip sites/${{ inputs.env_install }}/wp-content/plugins'
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+
+      - uses: benoitchantre/setup-ssh-authentication-action@1.0.0
+        with:
+          private-key: ${{ secrets.wpengine_ssh_key_private }}
+          private-key-name: deploy-wpengine
+          known-hosts: ${{ secrets.known_hosts }}
+
+      - run: |
+          rsync -chaviP --delete --stats --no-times --no-perms \
+            -e 'ssh -i ~/.ssh/deploy-wpengine' \
+            wp-content/plugins/ "${{ inputs.env_install }}@${{ inputs.env_ssh_host }}:/sites/${{ inputs.env_install }}/wp-content/plugins"

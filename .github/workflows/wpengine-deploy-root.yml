@@ -3,8 +3,6 @@ name: Deploy root to WP Engine
 on:
   workflow_call:
     inputs:
-      deploy_root:
-        type: boolean
       env_install:
         type: string
         required: true
@@ -19,44 +17,41 @@ on:
 
 jobs:
 
-  deploy-root:
+  deploy:
     runs-on: ubuntu-latest
-    if: ${{ inputs.deploy_root }}
     steps:
 
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: '0'
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: '0'
 
-      - name: Install SSH key
-        uses: benoitchantre/setup-ssh-authentication-action@1.0.0
-        with:
-          private-key: ${{ secrets.wpengine_ssh_key_private }}
-          private-key-name: deploy-wpengine
-          known-hosts: ${{ secrets.known_hosts }}
+    - uses: benoitchantre/setup-ssh-authentication-action@1.0.0
+      with:
+        private-key: ${{ secrets.wpengine_ssh_key_private }}
+        private-key-name: deploy-wpengine
+        known-hosts: ${{ secrets.known_hosts }}
 
-      - name: Deploy root
-        run: |
-          rsync -chaviP --stats --no-times --no-perms \
-            -e 'ssh -i ~/.ssh/deploy-wpengine' \
-            --exclude /.git/ \
-            --exclude /.github/ \
-            --exclude /.gitignore \
-            --exclude /.ssh/ \
-            --exclude /.editorconfig \
-            --exclude /wp-config-sample.php \
-            --exclude /wp-content/ \
-            --exclude /dev/ \
-            --exclude /composer.json \
-            --exclude /composer.lock \
-            --exclude /phpcs.xml \
-            --exclude /phpstan-baseline.neon \
-            --exclude /phpstan.neon \
-            --exclude /vendor \
-            --exclude /node_modules \
-            --exclude /.nvmrc \
-            --exclude /.stylelintignore \
-            --exclude /.stylelintrc.json \
-            --exclude /package.json \
-            --exclude /package-lock.json \
-            ./ "${{ inputs.env_install }}@${{ inputs.env_ssh_host }}:/sites/${{ inputs.env_install }}/"
+    - run: |
+        rsync -chaviP --stats --no-times --no-perms \
+          -e 'ssh -i ~/.ssh/deploy-wpengine' \
+          --exclude /.git/ \
+          --exclude /.github/ \
+          --exclude /.gitignore \
+          --exclude /.ssh/ \
+          --exclude /.editorconfig \
+          --exclude /wp-config-sample.php \
+          --exclude /wp-content/ \
+          --exclude /dev/ \
+          --exclude /composer.json \
+          --exclude /composer.lock \
+          --exclude /phpcs.xml \
+          --exclude /phpstan-baseline.neon \
+          --exclude /phpstan.neon \
+          --exclude /vendor \
+          --exclude /node_modules \
+          --exclude /.nvmrc \
+          --exclude /.stylelintignore \
+          --exclude /.stylelintrc.json \
+          --exclude /package.json \
+          --exclude /package-lock.json \
+          ./ "${{ inputs.env_install }}@${{ inputs.env_ssh_host }}:/sites/${{ inputs.env_install }}/"
