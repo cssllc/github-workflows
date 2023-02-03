@@ -5,7 +5,7 @@ on:
     inputs:
       backup:
         type: boolean
-        default: '1'
+        default: true
       env_install:
         type: string
         required: true
