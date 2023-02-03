@@ -31,6 +31,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    needs: [ backup ]
     steps:
 
       - uses: actions/checkout@v3
@@ -46,4 +47,4 @@ jobs:
       - run: |
           rsync -chaviP --delete --stats --no-times --no-perms \
             -e 'ssh -i ~/.ssh/deploy-wpengine' \
-            wp-content/plugins/ "${{ inputs.env_install }}@${{ inputs.env_ssh_host }}:/sites/${{ inputs.env_install }}/wp-content/plugins"
+            ./wp-content/plugins/ "${{ inputs.env_install }}@${{ inputs.env_ssh_host }}:/sites/${{ inputs.env_install }}/wp-content/plugins"
