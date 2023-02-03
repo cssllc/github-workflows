@@ -10,9 +10,9 @@ on:
       env_ssh_host:
         type: string
     secrets:
-      KNOWN_HOSTS:
+      known_hosts:
         required: true
-      WPENGINE_SSH_KEY_PRIVATE:
+      wpengine_ssh_key_private:
         required: true
 
 jobs:
@@ -29,9 +29,9 @@ jobs:
       - name: Install SSH key
         uses: benoitchantre/setup-ssh-authentication-action@1.0.0
         with:
-          private-key: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
+          private-key: ${{ secrets.wpengine_ssh_key_private }}
           private-key-name: deploy-wpengine
-          known-hosts: ${{ secrets.KNOWN_HOSTS }}
+          known-hosts: ${{ secrets.known_hosts }}
 
       - name: Deploy root
         run: |
