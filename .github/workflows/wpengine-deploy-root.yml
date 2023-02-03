@@ -5,6 +5,10 @@ on:
     inputs:
       deploy_root:
         type: boolean
+      env_install:
+        type: string
+      env_ssh_host:
+        type: string
     secrets:
       KNOWN_HOSTS:
         required: true
@@ -53,4 +57,4 @@ jobs:
             --exclude /.stylelintrc.json \
             --exclude /package.json \
             --exclude /package-lock.json \
-            ./ "$INSTALL@$SSH_HOST:/sites/$INSTALL/"
+            ./ "${{ inputs.env_install }}@${{ inputs.env_ssh_host }}:/sites/${{ inputs.env_install }}/"
