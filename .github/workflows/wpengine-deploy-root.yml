@@ -1,0 +1,56 @@
+name: Deploy root to WP Engine
+
+on:
+  workflow_call:
+    inputs:
+      deploy_root:
+        type: boolean
+    secrets:
+      KNOWN_HOSTS:
+        required: true
+      WPENGINE_SSH_KEY_PRIVATE:
+        required: true
+
+jobs:
+
+  deploy-root:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.deploy_root }}
+    steps:
+
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+
+      - name: Install SSH key
+        uses: benoitchantre/setup-ssh-authentication-action@1.0.0
+        with:
+          private-key: ${{ secrets.WPENGINE_SSH_KEY_PRIVATE }}
+          private-key-name: deploy-wpengine
+          known-hosts: ${{ secrets.KNOWN_HOSTS }}
+
+      - name: Deploy root
+        run: |
+          rsync -chaviP --stats --no-times --no-perms \
+            -e 'ssh -i ~/.ssh/deploy-wpengine' \
+            --exclude /.git/ \
+            --exclude /.github/ \
+            --exclude /.gitignore \
+            --exclude /.ssh/ \
+            --exclude /.editorconfig \
+            --exclude /wp-config-sample.php \
+            --exclude /wp-content/ \
+            --exclude /dev/ \
+            --exclude /composer.json \
+            --exclude /composer.lock \
+            --exclude /phpcs.xml \
+            --exclude /phpstan-baseline.neon \
+            --exclude /phpstan.neon \
+            --exclude /vendor \
+            --exclude /node_modules \
+            --exclude /.nvmrc \
+            --exclude /.stylelintignore \
+            --exclude /.stylelintrc.json \
+            --exclude /package.json \
+            --exclude /package-lock.json \
+            ./ "$INSTALL@$SSH_HOST:/sites/$INSTALL/"
