@@ -3,6 +3,8 @@ name: Deploy themes to WP Engine
 on:
   workflow_call:
     inputs:
+      backup:
+        type: boolean
       env_install:
         type: string
         required: true
