@@ -7,8 +7,10 @@ on:
         type: boolean
       env_install:
         type: string
+        required: true
       env_ssh_host:
         type: string
+        required: true
     secrets:
       known_hosts:
         required: true
