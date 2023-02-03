@@ -1,0 +1,245 @@
+// Header
+
+.header-nav {
+  .navbar {
+    @include rem(padding, 14px 0);
+
+    .navbar-nav {
+      li {
+        &:hover {
+          a {
+            border-bottom: solid 3px $bright-blue;
+            border-radius: 3px;
+          }
+        }
+
+        @media (min-width: 576px) and (max-width: 991.98px) {
+          /*display: none;*/
+          &.last-btn {
+            display: block;
+          }
+        }
+
+        a {
+          @include rem(margin-left, 15px);
+          @include rem(margin-right, 15px);
+          @include rem(padding-left, 0);
+          @include rem(padding-right, 0);
+          @include rem(font-size, 14px);
+          font-family: 'altivo', sans-serif;
+          font-weight: 500;
+          color: $white;
+          text-transform: uppercase;
+          border-bottom: solid 3px transparent;
+
+          @include media-breakpoint-down(md) {
+            display: inline-block;
+            clear: both;
+            @include rem(padding-bottom, 3px);
+            @include rem(padding-top, 25px);
+            color: #0d2132;
+            @include rem(font-size, 16px);
+            font-weight: 500;
+          }
+
+          @include media-breakpoint-down(xs) {
+            @include rem(padding-left, 0);
+          }
+
+          &.btn {
+            color: $dark-blue;
+            min-width: 116px;
+            min-height: 34px;
+
+            @include media-breakpoint-down(md) {
+              @include rem(margin-top, 15px);
+              @include rem(padding-top, 5px);
+            }
+
+            @include media-breakpoint-down(xs) {
+              width: 166px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .navbar-collapse {
+      position: absolute;
+      top: 0;
+      z-index: 999;
+      background: $white;
+      width: 100%;
+      @include rem(padding-bottom, 0);
+      max-width: 267px;
+      right: -15px;
+      box-shadow: 15px 15px 30px 0 rgba(51, 51, 51, 0.05);
+      border-radius: 0 0 0 8px;
+
+      ul.navbar-nav {
+        @include rem(padding, 30px 15px);
+        @include rem(padding-top, 50px);
+      }
+
+      .inner-nav-xs {
+        &.navbar-toggler {
+          position: absolute;
+          right: 14px;
+          top: 14px;
+          outline: none;
+        }
+      }
+    }
+
+    .navbar-toggler {
+      @include rem(padding, 0);
+      width: 40px;
+      height: 40px;
+
+      .navbar-icon {
+        display: block;
+        background-color: $white;
+        height: 4px;
+        @include rem(margin, 7px 0);
+      }
+    }
+  }
+}
+
+.hero-nav {
+  height: 650px;
+  width: 100%;
+
+  @include media-breakpoint-down(xs) {
+    height: auto;
+    background: $dark-blue;
+    background-image: none !important;
+  }
+
+  .hero-dec {
+    @include rem(margin-top, 77px);
+
+    @include media-breakpoint-down(lg) {
+      .btn {
+        @include rem(margin, 0 0 30px 0);
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      .btn {
+        @include rem(margin, 0 30px 20px 0);
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      @include rem(margin-top, 65px);
+      z-index: 1;
+      position: relative;
+
+      .btn {
+        @include rem(margin-left, 0);
+        @include rem(margin-right, 50px);
+        @include rem(margin-bottom, 18px);
+      }
+    }
+
+    h1 {
+      color: $white;
+    }
+
+    h4 {
+      color: $white;
+      @include rem(margin-top, 20px);
+      font-weight: 400;
+      @include rem(margin-bottom, 40px);
+
+      @include media-breakpoint-down(xs) {
+        @include rem(margin-bottom, 30px);
+      }
+    }
+  }
+}
+
+.xs-hero-img {
+  @include rem(margin-top, -50px);
+  @include rem(margin-left, 0);
+  @include rem(margin-right, 0);
+}
+
+.logo-wraps {
+  @include rem(padding-top, 45px);
+  @include rem(padding-bottom, 20px);
+
+  img {
+    max-height: 54px;
+    @include rem(margin-bottom, 25px);
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+      max-height: 30px;
+    }
+  }
+}
+
+a.link-btn {
+  font-family: 'Montserrat', sans-serif;
+  @include rem(font-size, 16px);
+  font-weight: bold;
+  color: $bright-orange;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.link-yellow {
+    color: $bright-yellow;
+  }
+}
+
+.services-nav {
+  header {
+    .header-nav {
+      .navbar-collapse {
+        background-color: $white;
+
+        ul.navbar-nav {
+          li.nav-item {
+            a.nav-link.btn {
+              background-color: $bright-orange !important;
+              color: $white;
+              border-color: $bright-orange !important;
+              box-shadow: 0 5px 10px 0 rgba(255, 133, 13, 0.3) !important;
+              width: auto;
+              display: inline-block;
+
+              @include media-breakpoint-down(md) {
+                min-height: 40px;
+                min-width: 138px;
+                @include rem(padding-top, 7px);
+              }
+
+              &:hover {
+                background-color: #ffa000 !important;
+                border-color: #ffa000 !important;
+                box-shadow: none !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  body.bg-shadow:before {
+    background-color: rgba(13, 33, 50, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    content: '';
+    z-index: 999;
+  }
+}

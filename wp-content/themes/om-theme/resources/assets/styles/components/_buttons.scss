@@ -1,0 +1,143 @@
+/**
+ * Buttons
+ */
+.btn {
+    box-shadow: 0 5px 10px 0 rgba(244, 235, 45, 0.3) !important;
+    font-family: "altivo", sans-serif;
+    @include rem(font-size, 16px);
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    @include rem(padding, 7px 25px 5px 25px);
+    min-height: 40px;
+    transition: all 0.5s;
+
+    &:hover {
+        transform: translate(0, -3px);
+    }
+
+    &.btn-warning {
+        background-color: $bright-yellow !important;
+        border: solid 2px $bright-yellow !important;
+        box-shadow: 0 5px 10px 0 rgba(244, 235, 45, 0.3) !important;
+
+        &:hover {
+            background-color: #fff300 !important;
+            border: solid 2px #fff300 !important;
+            box-shadow: none !important;
+        }
+    }
+
+    &.btn-outline-warning {
+        background-color: $dark-blue !important;
+        border: solid 2px $bright-yellow !important;
+        color: $bright-yellow !important;
+
+        &:hover {
+            background-color: $bright-yellow !important;
+            border: solid 2px $bright-yellow !important;
+            color: $dark-blue !important;
+        }
+    }
+
+    &.btn-orange {
+        box-shadow: 0 5px 10px 0 rgba(255, 133, 13, 0.3) !important;
+        background-color: $bright-orange !important;
+        border-color: $bright-orange !important;
+        color: $white !important;
+
+        &:hover {
+            background-color: #ffa000 !important;
+            box-shadow: none !important;
+            border-color: #ffa000 !important;
+        }
+    }
+
+    &.btn-primary {
+        background-color: $bright-blue;
+        border: 0;
+        box-shadow: 0 5px 10px 0 rgba(70, 195, 252, 0.3) !important;
+
+        &:hover {
+            background-color: #00afff !important;
+            box-shadow: none !important;
+        }
+    }
+
+    &.btn-red {
+        box-shadow: 0 5px 10px 0 rgba(244, 31, 61, 0.3) !important;
+        background-color: #f41f3d;
+        color: $white;
+
+        &:hover {
+            background-color: #ff0024;
+            box-shadow: none !important;
+        }
+    }
+
+    &.btn-purple {
+        box-shadow: 0 5px 10px 0 rgb(239, 31, 244, 0.30) !important;
+        background-color: $purple-main !important;
+        border-color: $purple-main !important;
+        color: $white !important;
+
+        &:hover {
+            background-color: #f900ff !important;
+            box-shadow: none !important;
+            border-color: #f900ff !important;
+        }
+    }
+
+    &.btn-green {
+        box-shadow: 0 5px 10px 0 rgb(56, 228, 38, 0.30) !important;
+        background-color: #38e426 !important;
+        border-color: #38e426 !important;
+        color: $dark-blue !important;
+
+        &:hover {
+            background-color: #18ff00 !important;
+            border-color: #18ff00 !important;
+            box-shadow: none !important;
+        }
+    }
+}
+
+.btn+.btn {
+    @include rem(margin-left, 30px);
+}
+
+i.icon-download {
+    background-image: url(/wp-content/uploads/2021/04/download-yellow-icon-1.svg);
+    background-size: cover;
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+}
+
+.sm-title.sm-title-purple {
+    color: #d831eb;
+    a {
+        color: #d831eb;
+        @media (hover: hover) {
+            &:hover {
+                color: #d831eb;
+            }
+        }
+    }
+}
+
+.sm-title.sm-title-green {
+    color: #38e426;
+    a {
+        color: #38e426;
+        @media (hover: hover) {
+            &:hover {
+                color: #38e426;
+            }
+        }
+    }
+}
+
+a.links.link-green {
+    color: #38e426 !important;
+}

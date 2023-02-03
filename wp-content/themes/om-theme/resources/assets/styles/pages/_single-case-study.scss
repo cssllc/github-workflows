@@ -1,0 +1,210 @@
+section.blog-details-article {
+    article {
+        ul {
+            color: $grey-1;
+            @include rem(margin-bottom, 40px);
+            @include rem(padding-left, 20px);
+
+            li {
+                &::marker {
+                    width: 1px;
+                    height: 0;
+                    @include rem(font-size, 13px);
+                }
+
+                ul {
+                    @include rem(margin, 5px 0);
+                }
+            }
+        }
+
+        h3 {
+            @include rem(margin, 30px 0);
+        }
+
+        img {
+            @include rem(margin-bottom, 40px);
+            height: auto;
+
+            @include media-breakpoint-down(md) {
+                @include rem(margin-bottom, 20px);
+            }
+        }
+
+        .services-media-main {
+            .services-media-wrap {
+                .services-media-img {
+                    @include media-breakpoint-down(sm) {
+                        @include rem(margin-top, 24px);
+                    }
+                }
+
+                .media-body {
+                    @include rem(padding-bottom, 20px);
+                    @include rem(padding-top, 20px);
+
+                    @include media-breakpoint-down(sm) {
+                        @include rem(padding-left, 10px);
+                        @include rem(padding-right, 10px);
+                    }
+
+                    h3 {
+                        @include rem(font-size, 21px);
+                        @include rem(margin-bottom, 15px);
+                        line-height: 28px;
+                        color: $dark-blue;
+                    }
+
+                    ul {
+                        @include rem(margin-bottom, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.quote-wrap {
+    background-color: $dark-blue;
+    @include rem(padding, 60px);
+    @include rem(margin-bottom, 10px);
+    @include rem(margin-top, 60px);
+    border-bottom-left-radius: 8px;
+
+    @include media-breakpoint-down(sm) {
+        @include rem(padding, 30px);
+    }
+
+    h3 {
+        color: $white;
+        @include rem(font-size, 36px);
+        line-height: 44px;
+        font-weight: 500;
+        @include rem(margin, 0);
+        position: relative;
+
+        @include media-breakpoint-down(md) {
+            @include rem(font-size, 30px);
+            line-height: 34px;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            background-image: url(/wp-content/uploads/2021/06/case-study-wrap-file.svg);
+            width: 88px;
+            height: 76px;
+            background-repeat: no-repeat;
+            background-position: center;
+            left: -29px;
+            top: -30px;
+
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+
+        &:after {
+            border-top: 65px solid $dark-blue;
+            border-right: 65px solid transparent;
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: -124px;
+
+            @include media-breakpoint-down(sm) {
+                bottom: -93px;
+            }
+        }
+    }
+
+    &:before {
+        background-image: url(/wp-content/uploads/2021/02/plus-pattern-blue.svg);
+        content: "";
+        position: absolute;
+        width: 50vw;
+        height: 600px;
+        left: 0;
+        z-index: -1;
+        @include rem(margin-top, -116px);
+
+        @include media-breakpoint-down(md) {
+            width: 30vw;
+        }
+
+        @include media-breakpoint-down(sm) {
+            @include rem(margin-top, -86px);
+            width: 34vw;
+        }
+    }
+}
+
+.quet-outer-text {
+    text-align: right;
+    @include rem(padding-right, 150px);
+    max-width: 480px;
+    float: right;
+    @include rem(margin-bottom, 150px);
+
+    @include media-breakpoint-down(sm) {
+        @include rem(margin-bottom, 10px);
+        @include rem(margin-top, 60px);
+    }
+
+    h3 {
+        @include rem(margin-bottom, 5px);
+    }
+
+    h4 {
+        color: $grey-1;
+    }
+}
+
+.case-study-lead-per-wrap {
+    @include rem(padding, 60px 50px);
+    box-shadow: 15px 15px 30px 0 rgba(51, 51, 51, 0.05);
+    background-color: $white;
+    @include rem(margin-top, 140px);
+
+    @include media-breakpoint-down(md) {
+        @include rem(padding, 60px 30px);
+    }
+
+    .case-study-per-text {
+        text-align: center;
+        @include rem(margin-bottom, 60px);
+
+        .lead-per-text {
+            @include rem(font-size, 36px);
+            color: $dark-blue;
+            font-weight: 700;
+            line-height: 42px;
+            text-transform: uppercase;
+
+            @include media-breakpoint-down(md) {
+                @include rem(font-size, 28px);
+                line-height: 32px;
+            }
+        }
+
+        &:last-child {
+            @include rem(margin-bottom, 0);
+        }
+
+        .rate-text {
+            @include rem(font-size, 14px);
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 18px;
+            color: $bright-blue;
+        }
+    }
+}
+
+section.blog-details-article.case-study-details-article {
+    article {
+        h2 {
+            @include rem(margin-top, 40px);
+        }
+    }
+}

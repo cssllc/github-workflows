@@ -1,0 +1,463 @@
+section.growth-process-main.dedicated-digital-wrap {
+    @include rem(padding-bottom, 60px);
+
+    @include media-breakpoint-down(sm) {
+        @include rem(padding-top, 70px);
+    }
+
+    .growth-process-inner-wrap {
+        @include media-breakpoint-down(md) {
+            max-width: 270px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            max-width: 100%;
+            @include rem(margin-bottom, 30px);
+        }
+    }
+
+    .growth-process-right {
+        p {
+            font-weight: normal;
+            color: $grey-1;
+        }
+    }
+}
+
+section.build-main.core-solution-wrap {
+    @include rem(padding-top, 59px);
+
+    h2 {
+        position: relative;
+
+        &:before {
+            position: absolute;
+            background-image: url(/wp-content/uploads/2021/03/yellow-marker-small.svg);
+            background-repeat: no-repeat;
+            content: "";
+            width: 100%;
+            height: 90px;
+            left: -35px;
+            z-index: -1;
+            top: 10px;
+
+            @include media-breakpoint-down(sm) {
+                left: -20px;
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            max-width: 270px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            max-width: 100%;
+        }
+    }
+
+    &:after {
+        content: "";
+        background-image: url(/wp-content/uploads/2021/02/plus-pattern-blue.svg);
+        width: 50vw;
+        height: 600px;
+        z-index: -1;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-repeat: repeat;
+
+        @include media-breakpoint-down(md) {
+            top: 30px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            top: -10px;
+            z-index: -2;
+        }
+    }
+
+    .build-space-shadow {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+
+
+        &:before {
+            display: none;
+        }
+    }
+
+    .build-inner-wrap {
+        h4 {
+            max-width: 100%;
+        }
+    }
+}
+
+section.build-main.build-main-two {
+    @include rem(margin-top, 0);
+    @include rem(padding-top, 0);
+    @include rem(padding-bottom, 30px);
+    background-color: $white-100;
+
+    @include media-breakpoint-down(sm) {
+        @include rem(padding-bottom, 0);
+    }
+
+    .build-space-shadow {
+        position: relative;
+        top: -90px;
+        z-index: 999;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        @include media-breakpoint-down(sm) {
+            top: -70px;
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+}
+
+section.be-human-main.be-human-main-two {
+    @include rem(margin-bottom, 0);
+
+    .be-human-left {
+        @include rem(padding-bottom, 200px);
+        position: relative;
+
+        &:after {
+            position: absolute;
+            left: -30px;
+            content: "";
+            background-image: url(/wp-content/uploads/2021/04/plus-pattern-purple-small.svg);
+            width: 400px;
+            height: 245px;
+            background-size: contain;
+            bottom: -50px;
+            z-index: 9;
+            background-repeat: no-repeat;
+
+            @include media-breakpoint-down(sm) {
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+
+section.hear-from-you-wrap {
+    @include rem(padding-bottom, 100px);
+    background-color: $white-100;
+
+    .hear-from-you-wrap-left {
+        h4 {
+            @include rem(padding-top, 30px);
+        }
+
+        @include media-breakpoint-down(md) {
+            max-width: 270px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            max-width: 100%;
+            @include rem(margin-bottom, 60px);
+
+            h2 {
+                @include rem(margin-bottom, 30px);
+            }
+        }
+
+        img {
+            border-bottom-right-radius: 8px;
+        }
+    }
+
+    .hear-from-you-wrap-right.form-same-ui {
+        max-width: 450px;
+    }
+}
+
+section.carousel-slider-wrap {
+    @include rem(padding, 20px 0 70px 0);
+
+    .slick-slider {
+        .slick-list {
+            overflow: hidden;
+
+            .slick-track {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .slick-slide {
+                    text-align: center;
+                    outline: none;
+                    @include rem(margin, 0 auto);
+
+                    .autoplay-slide > p {
+                        @include rem(font-size, 28px);
+                        line-height: 38px;
+                        color: $dark-blue;
+                        font-style: italic;
+                        @include rem(margin-bottom, 0);
+                        max-width: 730px;
+                        @include rem(margin, 0 auto);
+
+                        @include media-breakpoint-down(sm) {
+                            @include rem(font-size, 21px);
+                            line-height: 30px;
+                        }
+                    }
+
+                    .media {
+                        justify-content: center;
+                        @include rem(margin, 0 auto);
+                        display: inline-flex;
+                        @include rem(margin-top, 33px !important);
+                        @include rem(margin-bottom, 30px);
+                        align-items: center;
+
+                        @include media-breakpoint-down(sm) {
+                            flex-direction: column;
+                        }
+
+                        >img {
+                            max-width: 64px;
+                            max-height: 64px;
+                            border-radius: 61px;
+
+                            @include media-breakpoint-down(sm) {
+                                @include rem(margin, 0 !important);
+                            }
+                        }
+
+                        .media-body {
+                            @include media-breakpoint-down(sm) {
+                                text-align: center !important;
+                                @include rem(margin-top, 14px);
+                            }
+
+                            > p {
+                                @include rem(margin, 0);
+                                line-height: 24px;
+                            }
+
+                            h6 {
+                                @include rem(font-size, 18px);
+                                font-weight: 600;
+                                color: $dark-blue;
+                                @include rem(margin-bottom, 0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sliders {
+        >.slides {
+            .slick-list {
+                .slick-slide {
+                    outline: none;
+
+                    >img {
+                        max-width: 130px;
+                        cursor: pointer;
+                        -webkit-filter: grayscale(1);
+                        filter: grayscale(1);
+                        max-height: 53px;
+
+                        &:hover {
+                            filter: none;
+                        }
+
+                        @include media-breakpoint-down(sm) {
+                            max-height: 33px;
+                            max-width: 80px;
+                        }
+                    }
+
+                    &.slick-active {
+                        &.slick-center {
+                            filter: none;
+                        }
+                    }
+
+                    &.slick-current {
+                        img {
+                            filter: none !important;
+                        }
+                    }
+                }
+            }
+
+            .slick-prev.slick-arrow {
+                position: absolute;
+                left: 0;
+                top: 40%;
+                @include rem(font-size, 0);
+                border: 0;
+                background: transparent;
+                @include rem(padding, 0);
+
+                &:before {
+                    content: "";
+                    background-image: url(/wp-content/uploads/2021/06/slider-arrow-left.svg);
+                    width: 32px;
+                    height: 58px;
+                    background-size: contain;
+                    z-index: 999;
+                    position: absolute;
+                    left: 0;
+                }
+            }
+
+            .slick-next.slick-arrow {
+                position: absolute;
+                top: 40%;
+                right: 0;
+                @include rem(font-size, 0);
+                border: 0;
+                background: transparent;
+                @include rem(padding, 0);
+
+                &:after {
+                    content: "";
+                    width: 32px;
+                    height: 58px;
+                    background-size: contain;
+                    z-index: 999;
+                    position: absolute;
+                    background-image: url(/wp-content/uploads/2021/06/slider-arrow-right.svg);
+                    transform: rotate(180deg);
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+.form-same-ui-inner {
+    .gform_body {
+        ul.gform_fields {
+            @include rem(margin, 0);
+            @include rem(padding, 0);
+            list-style: none;
+
+            li.gfield {
+                @include rem(margin-bottom, 20px);
+
+                >label.gfield_label {
+                    @include rem(font-size, 14px);
+                    font-weight: normal;
+                    color: $grey-1;
+                    line-height: 24px;
+                    margin: 0;
+                }
+
+                .ginput_container {
+                    .medium {
+                        border-radius: 20px;
+                        border: solid 2px $white-300;
+                        min-height: 40px;
+                        outline: none;
+                        width: 100%;
+                        @include rem(padding, 0 14px);
+
+                        &.textarea {
+                            @include rem(padding-top, 10px);
+                            @include rem(padding-bottom, 10px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .gform_footer {
+        .gform_button {
+            @include rem(padding, 8px 15px);
+            border-radius: 20px;
+            box-shadow: 0 5px 10px 0 rgba(255, 133, 13, 0.3);
+            background-color: $bright-orange;
+            border: 0;
+            @include rem(font-size, 16px);
+            font-weight: 500;
+            color: $white;
+            width: 100%;
+            outline: none;
+            transition: all 0.5s;
+
+            &:hover {
+                background-color: #ffa000;
+                box-shadow: none;
+                transform: translate(0, -3px);
+            }
+        }
+    }
+}
+
+section.hear-from-you-wrap.Contact-main {
+    background-color: $white;
+    @include rem(padding-top, 78px);
+
+    h4 {
+        color: $grey-1;
+    }
+
+    img {
+        @include rem(margin, 40px 0px);
+    }
+
+    .form-same-ui-inner {
+        .gform_footer {
+            .gform_button {
+                display: inline-block;
+                width: 228px;
+            }
+        }
+    }
+}
+
+section.carousel-slider-wrap {
+    .sliders {
+        .slides.slick-initialized.slick-slider {
+            .slick-track {
+                width: 100% !important;
+                transform: none !important;
+
+                .slick-slide {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        max-height: 65px;
+                        max-width: 135px;
+                        -webkit-filter: grayscale(1);
+                        filter: grayscale(1);
+                    }
+                }
+            }
+
+            .slick-list {
+                padding: 0 !important;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    section.hear-from-you-wrap.Contact-main {
+        .hear-from-you-wrap-left {
+            >img {
+                display: none;
+            }
+        }
+    }
+}

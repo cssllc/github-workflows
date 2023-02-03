@@ -1,0 +1,69 @@
+section.section.ebook-details-desc {
+    @include rem(padding-top, 90px);
+    @include rem(padding-bottom, 150px);
+
+    @include media-breakpoint-down(sm) {
+        @include rem(padding-bottom, 80px);
+    }
+
+    .blog-profile-details-wrap {
+        min-width: 100%;
+        @include rem(margin-top, 90px);
+
+        @include media-breakpoint-down(md) {
+            @include rem(padding, 60px 30px);
+        }
+    }
+}
+
+.article-ebook {
+    ul {
+        @include rem(padding-left, 20px);
+        @include rem(margin-bottom, 60px);
+
+        li {
+            color: $grey-1;
+            line-height: 28px;
+
+            b {
+                color: $dark-blue;
+            }
+        }
+    }
+}
+
+a.links.links-purple {
+    color: $purple-main;
+}
+
+@include media-breakpoint-up(md) {
+    section.blog-banner-wrap.ebook-details-hero {
+        .blog-banner-img {
+            position: absolute;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    section.blog-banner-wrap.ebook-details-hero {
+        .blog-blue-bg-left {
+            height: 65%;
+        }
+    }
+}
+
+// back link for single pages
+
+.back-link {
+    a {
+        color: #ff850d;
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+        font-size: 14px;
+
+        img {
+            margin-right: 4px;
+        }
+    }
+}

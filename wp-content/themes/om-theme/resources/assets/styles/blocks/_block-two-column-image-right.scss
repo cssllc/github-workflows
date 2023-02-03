@@ -1,0 +1,38 @@
+.be-human-main{
+	background-color: $dark-blue;
+	position: relative;
+	@include rem(margin-bottom, 90px);
+	@include media-breakpoint-down(sm) {
+		@include rem(margin-bottom, 60px);
+		.xs-our-team{
+			flex-direction: column-reverse;
+			.position-none-custom{
+				height: 314px;
+			}
+		}
+	}
+	.be-human-left{
+		@include rem(padding, 60px 0);
+		h2{
+			color: $white;
+			@include rem(margin-bottom, 20px);
+		}
+		p{
+			color: $white;
+			@include rem(margin-bottom, 20px);
+		}
+	}
+	.be-human-right{
+		height: 100%;
+		width: 50vw;
+		right: 0;
+		position: absolute;
+		background-position: right center !important;
+		@include media-breakpoint-down(sm) {
+			height: 314px;
+    		width: 100%;
+    		background-position: center top !important;
+		}
+	}
+}
+

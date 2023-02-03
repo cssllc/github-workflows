@@ -1,0 +1,118 @@
+.block-case-study-slider {
+    @include rem(margin-top, 47px);
+    @include rem(margin-bottom, 4px);
+    background-color: $dark-blue;
+    position: relative;
+
+    &:before {
+        background: url('/wp-content/uploads/2021/08/plus-pattern-blue.svg') no-repeat;
+        content: '';
+        position: absolute;
+        top: -50px;
+        left: 0;
+        width: 100%;
+        max-width: 720px;
+        height: 538px;
+        z-index: 1;
+    }
+
+    .case-study-slider-container {
+        overflow: hidden;
+    }
+
+    .case-study-slider {
+        @include rem(margin-bottom, 140px);
+        position: relative;
+        z-index: 2;
+    }
+
+
+    .case-study-card {
+        @include rem(padding, 100px 95px 58px);
+        display: flex;
+        flex-direction: column;
+        border-bottom-right-radius: 8px;
+        box-shadow: 15px 15px 30px 0 rgba(51, 51, 51, 0.05);
+        background-color: $white;
+        height: 100%;
+
+        @include media-breakpoint-down(md) {
+            @include rem(padding, 100px 60px 58px);
+        }
+
+        @include media-breakpoint-down(sm) {
+            @include rem(padding, 100px 30px 58px);
+        }
+
+        h2 {
+            @include rem(padding-bottom, 20px);
+            @include rem(font-size, 44px);
+            font-weight: $font-weight-bold;
+            line-height: 1.05;
+            color: $dark-blue;
+            position: relative;
+            z-index: 2;
+
+            &:after {
+                content: '';
+                background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNDMyIiBoZWlnaHQ9IjkwIiB2aWV3Qm94PSIwIDAgNDMyIDkwIj4KICAgIDxkZWZzPgogICAgICAgIDxwYXRoIGlkPSJjamRpM3psYm1hIiBkPSJNMCAwTDQzMiAwIDQzMiA4OSAwIDg5eiIvPgogICAgPC9kZWZzPgogICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8Zz4KICAgICAgICAgICAgPGc+CiAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNDY4LjAwMDAwMCwgLTczOTYuMDAwMDAwKSB0cmFuc2xhdGUoNDAzLjAwMDAwMCwgNzI5Ni40NzUxNzcpIHRyYW5zbGF0ZSg2NS4wMDAwMDAsIDEwMC4wMDAwMDApIj4KICAgICAgICAgICAgICAgICAgICA8bWFzayBpZD0ieHBwejhiMmZtYiIgZmlsbD0iI2ZmZiI+CiAgICAgICAgICAgICAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI2NqZGkzemxibWEiLz4KICAgICAgICAgICAgICAgICAgICA8L21hc2s+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZmlsbD0iI0Y0RUIyRCIgZD0iTTQxOS42MSAyMy4zNTZjLTUxLjM2LjU2Mi0xMDIuNzE4IDEuMTItMTU0LjA3OCAxLjY4MS0xLjMzOC05LjM4LTUuMjkyLTE3LjAzLTExLjg5Mi0xNi43LTM5LjkzMiAyLjAxOC03OS44NjMgNC4wNC0xMTkuNzkzIDYuMDU4LTE4LjY3NC45NDEtMzcuNTA3IDIuNjEtNTYuMTE5LTEuMzI4QzU3Ljk2IDguODgyIDM5Ljk1NC00LjA4MiAxOS44MjYgMS4yOGMtNC4yNiAxLjEzNi03LjM0IDguMTA1LTguNjY1IDE2LjAyQzUgMTguMjIyIDAgMzAuNzIxIDAgNDIuMDc3YzAgMTQuNTYgNS45MjQgMjMuMzY1IDEyLjg2IDI0Ljc3MiAxLjgyOS4zNyAzLjY1OC42ODQgNS40ODYgMS4wNDQgMi4wNDQgNS41MTYgNS4zNjcgOS4zMjQgOS45OCA5LjI3NWw0MC43Ny0uNDQ2QzE4NS43NCA5NC4yNjIgMzAzLjA0IDkzLjAyNyA0MTkuNjEgNzIuOTAxYzE2LjIwNi0yLjggMTYuODMyLTQ5LjczIDAtNDkuNTQ1IiBtYXNrPSJ1cmwoI3hwcHo4YjJmbWIpIi8+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=') no-repeat;
+                background-size: contain;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                max-width: 432px;
+                height: 80px;
+                z-index: -1;
+            }
+        }
+
+        p {
+            @include rem(font-size, 16px);
+            line-height: 1.75;
+            color: $grey-1;
+        }
+
+        .btn {
+            @include rem(margin-top, 30px);
+            @include rem(font-size, 16px);
+            @include rem(padding, 8px 25px 5px 25px);
+            margin-top: auto;
+            max-width: 212px;
+            border-radius: 20px;
+            box-shadow: 0 5px 10px 0 rgba(255, 133, 13, 0.3);
+            font-weight: $font-weight-medium;
+            color: $white;
+        }
+    }
+
+    .splide__track {
+        overflow: visible;
+    }
+
+    .splide__pagination {
+        bottom: -3.5em;
+
+        &:not(:last-child) {
+            display: none;
+        }
+
+        li {
+            &:not(:last-child) {
+                @include rem(margin-right, 7px !important);
+            }
+        }
+
+        .splide__pagination__page {
+            background-color: $grey-3;
+            width: 12px;
+            height: 12px;
+
+            &.is-active {
+                background-color: $pumpkin;
+                opacity: 1;
+            }
+        }
+
+    }
+}

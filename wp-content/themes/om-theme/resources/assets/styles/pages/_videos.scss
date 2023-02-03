@@ -1,0 +1,90 @@
+section {
+	&.section {
+		&.blogs-template-cards {
+			&.all-videos-thumb {
+				@include rem(padding-top, 0);
+			}
+		}
+	}
+	&.resources-second-wrap {
+		&.blog-banner-wrap {
+			&.all-video-main-wrap {
+				@include rem(margin-top, 0);
+			}
+		}
+	}
+}
+
+section.section.ebook-details-desc.video-details-page {
+	@include rem(padding-top, 0);
+}
+
+section.resources-second-wrap.blog-banner-wrap.all-video-main-wrap {
+	&::after {
+		background-image: url(../../images/plus-pattern-red-2.svg);
+		height: 538px;
+		width: 49vw;
+	}
+}
+
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+section.resources-second-wrap.blog-banner-wrap.all-video-main-wrap {
+	.blog-banner-img {
+		position: relative;
+		padding-bottom: 56%;
+		height: auto;
+		width: 100%;
+		>iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+.back-link {
+	a.links.links-red {
+		font-size: 14px;
+		font-weight: 400;
+	}
+}
+.video-template-default {
+	section.resources-second-wrap.blog-banner-wrap.all-video-main-wrap {
+		margin-bottom: 100px;
+		@media (max-width: 767.98px) {
+			margin-bottom: 30px;
+		}
+		.sm-profile {
+			margin-bottom: 0;
+		}
+		.blog-banner-img {
+			padding-bottom: 0;
+		}
+	}
+	section.section.ebook-details-desc {
+		.blog-profile-details-wrap {
+			margin-top: 0;
+		}
+		.ebook-profile {
+			margin-top: 0;
+		}
+	}
+}

@@ -1,0 +1,43 @@
+{
+    "key": "group_60b65e16c4222",
+    "title": "Case Study - Phase Content End",
+    "fields": [
+        {
+            "key": "field_60b65e1cde334",
+            "label": "Phase Data Content",
+            "name": "phase_data_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<h3>Phase 1: Foundation &amp; Capturing Existing Demand<\/h3>\r\n                    <p>OM created a digital foundation to collect data and learnings for future success.<\/p>\r\n                    <ul>\r\n                        <li>Defined message and value proposition<\/li>\r\n                        <li>Defined “specialization” targeting strategy <\/li>\r\n                        <li>Built an acquisition system: Replicable and specialization-focused landing pages, lead nurture and education, inbound sales process <\/li>\r\n                        <li>Demand generation: Search, social, and “specialization” focused ad placement across other platforms<\/li>\r\n                        <li>Integrated Salesforce <\/li>\r\n                        <li>Created reporting structure (Paid, Organic, Direct)<\/li>\r\n                        <li>Collected data learnings for development of growth framework<\/li>\r\n                    <\/ul> <img src=\"https:\/\/dummyimage.com\/635x475\/000\/fff\">\r\n                    <ul>\r\n                        <li>Evaluated and scaled up the established framework\r\n                            <ul>\r\n                                <li>Landing pages CRO<\/li>\r\n                                <li>Bi-weekly ad iteration <\/li>\r\n                                <li>Audiences optimization <\/li>\r\n                                <li>New PPC focus segments <\/li>\r\n                                <li>Learning: We learned about limitations in existing demand and our need for toolsets to create new demand. The industry was hungry for guidance and resources.<\/li>\r\n                            <\/ul>\r\n                        <\/li>\r\n                        <li>Built content distribution tools and created industry authority\r\n                            <ul>\r\n                                <li>Brand new marketing website<\/li>\r\n                                <li>Thought leadership toolset<\/li>\r\n                                <li>Custom Blogs<\/li>\r\n                                <li>Clinic resources<\/li>\r\n                                <li>Gated content (webinars, eBooks, white papers)<\/li>\r\n                            <\/ul>\r\n                        <\/li>\r\n                        <li>Developed and guided “pillar” content strategy<\/li>\r\n                        <li>Challenge: Content required lengthy review periods<\/li>\r\n                    <\/ul>\r\n                    <h3>Phase 3: Scale Sustainably &amp; Create Customer Advocacy<\/h3>\r\n                    <p>During this phase OM created an annual campaign calendar to guide content production and the scaling of vaccine guidance. With a full digital setup and proof of concept, the focus shifted to new demand creation. Leveraging our toolsets to launch quarterly campaigns and market resources for continued awareness, education, and brand trust.<\/p>\r\n                    <h2>Results<\/h2>\r\n                    <ul>\r\n                        <li>A targeted and multi-touch digital strategy (live within 60 days).\r\n                            <ul>\r\n                                <li>Included specialization-focused targeting (family, pediatrics and internal medicine providers).<\/li>\r\n                                <li>Built custom landing pages, multi-touch advertising strategy, and a lifecycle stage based email lead nurture. <\/li>\r\n                                <li>A robust analytics system and UTM structure which enabled clear attribution and CAC data.<\/li>\r\n                                <li>Complete Salesforce integration with lead routing, and last-touch acquisition reporting.<\/li>\r\n                            <\/ul>\r\n                        <\/li>\r\n                        <li>6%+ lead conversion rates and MoM decreases in CPL and CAC from paid digital.<\/li>\r\n                        <li>Built a high-performing inside sales system, lead management, and CRM reporting within Salesforce.<\/li>\r\n                        <li>Proved that digital can be the primary growth channel. <\/li>\r\n                        <li>Cemented digital acquisition as the pillar acquisition strategy of the VaxCare organization.<\/li>\r\n                    <\/ul>\r\n                    <h2>Conclusion<\/h2>\r\n                    <p>As the world continues to shift (at hyper speed since COVID) to digital communication, forward thinking organizations like VaxCare will recognize this unparalleled opportunity to embrace innovation and outgrow the competition. These companies will leverage digital marketing to drive inside sales, build their pipeline and navigate the new landscape.<\/p>",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "case-studies"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1622564419
+}

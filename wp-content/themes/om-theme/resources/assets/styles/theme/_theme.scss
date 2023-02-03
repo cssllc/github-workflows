@@ -1,0 +1,45 @@
+.sm-title {
+    font-family: Altivo;
+    @include rem(font-size, 14px);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: $bright-blue;
+    a {
+        color: $bright-blue;
+        @media (hover: hover) {
+            &:hover {
+                color: $bright-blue;
+            }
+        }
+    }
+}
+
+.cat-name {
+    cursor: pointer;
+    @media (hover: hover) {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.position-none-custom {
+    position: inherit;
+}
+
+.blog-banner-img {
+    img {
+        border-bottom-left-radius: 8px;
+    }
+}
+
+.blog-details-article {
+    .case-study-lead-per-wrap {
+        border-bottom-right-radius: 8px;
+    }
+}
+
+.blog-blue-bg-left {
+    border-bottom-right-radius: 8px;
+}

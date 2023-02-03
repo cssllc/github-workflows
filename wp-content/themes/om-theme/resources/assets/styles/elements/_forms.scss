@@ -1,0 +1,21 @@
+.gform_wrapper .gfield_required {
+    display: none;
+}
+.validation_message {
+    color: $bright-orange;
+}
+h2.gform_submission_error.hide_summary {
+    font-size: 1rem;
+    line-height: 24px;
+    font-weight: normal;
+}
+
+.gform_validation_container,
+.gform_wrapper.gravity-theme .gform_validation_container,
+body .gform_wrapper.gravity-theme .gform_validation_container,
+body .gform_wrapper.gravity-theme .gform_body .gform_fields .gfield.gform_validation_container,
+body .gform_wrapper.gravity-theme .gform_fields .gfield.gform_validation_container {
+    display: none !important;
+    position: absolute !important;
+    left: -9000px;
+}
