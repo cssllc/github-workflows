@@ -39,17 +39,17 @@ jobs:
     if: always()
     steps:
 
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: '0'
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: '0'
 
-      - uses: benoitchantre/setup-ssh-authentication-action@1.0.0
-        with:
-          private-key: ${{ secrets.wpengine_ssh_key_private }}
-          private-key-name: deploy-wpengine
-          known-hosts: ${{ secrets.known_hosts }}
+    - uses: benoitchantre/setup-ssh-authentication-action@1.0.0
+      with:
+        private-key: ${{ secrets.wpengine_ssh_key_private }}
+        private-key-name: deploy-wpengine
+        known-hosts: ${{ secrets.known_hosts }}
 
-      - run: |
-          rsync -chaviP --delete --stats --no-times --no-perms \
-            -e 'ssh -i ~/.ssh/deploy-wpengine' \
-            wp-content/themes/ "${{ inputs.env_install }}@${{ inputs.env_ssh_host }}:/sites/${{ inputs.env_install }}/wp-content/themes"
+    - run: |
+        rsync -chaviP --delete --stats --no-times --no-perms \
+          -e 'ssh -i ~/.ssh/deploy-wpengine' \
+          wp-content/themes/ "${{ inputs.env_install }}@${{ inputs.env_ssh_host }}:/sites/${{ inputs.env_install }}/wp-content/themes"
