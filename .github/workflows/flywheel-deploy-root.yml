@@ -1,0 +1,60 @@
+name: Deploy root to Flywheel
+
+on:
+  workflow_call:
+    inputs:
+      env_site_slug:
+        type: string
+        required: true
+      env_ssh_host:
+        type: string
+        required: true
+    secrets:
+      known_hosts:
+        required: true
+      flywheel_ssh_user:
+        required: true
+      flywheel_ssh_key_private:
+        required: true
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: '0'
+
+    - uses: benoitchantre/setup-ssh-authentication-action@1.0.0
+      with:
+        private-key: ${{ secrets.flywheel_ssh_key_private }}
+        private-key-name: deploy-flywheel
+        known-hosts: ${{ secrets.known_hosts }}
+
+    - run: |
+        rsync -chaviP --stats --no-times --no-perms \
+          -e 'ssh -i ~/.ssh/deploy-flywheel' \
+          --exclude /.git/ \
+          --exclude /.github/ \
+          --exclude /.gitignore \
+          --exclude /.ssh/ \
+          --exclude /.editorconfig \
+          --exclude /wp-config-sample.php \
+          --exclude /wp-content/ \
+          --exclude /dev/ \
+          --exclude /composer.json \
+          --exclude /composer.lock \
+          --exclude /phpcs.xml \
+          --exclude /phpstan-baseline.neon \
+          --exclude /phpstan.neon \
+          --exclude /vendor \
+          --exclude /node_modules \
+          --exclude /.nvmrc \
+          --exclude /.stylelintignore \
+          --exclude /.stylelintrc.json \
+          --exclude /package.json \
+          --exclude /package-lock.json \
+          --filter=':- /.gitignore' \
+          ./ "${{ secrets.flywheel_ssh_user }}+${{ inputs.env_site_slug }}@${{ inputs.env_ssh_host }}:/www"

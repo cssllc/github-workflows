@@ -1,0 +1,41 @@
+name: Deploy themes to Flywheel
+
+on:
+  workflow_call:
+    inputs:
+      env_site_slug:
+        type: string
+        required: true
+      env_ssh_host:
+        type: string
+        required: true
+    secrets:
+      known_hosts:
+        required: true
+      flywheel_ssh_user:
+        required: true
+      flywheel_ssh_key_private:
+        required: true
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: '0'
+
+    - uses: benoitchantre/setup-ssh-authentication-action@1.0.0
+      with:
+        private-key: ${{ secrets.flywheel_ssh_key_private }}
+        private-key-name: deploy-flywheel
+        known-hosts: ${{ secrets.known_hosts }}
+
+    - run: |
+        rsync -chaviP --delete --stats --no-times --no-perms \
+          -e 'ssh -i ~/.ssh/deploy-flywheel' \
+          --filter=':- /.gitignore' \
+          wp-content/plugins/ "${{ secrets.flywheel_ssh_user }}+${{ inputs.env_site_slug }}@${{ inputs.env_ssh_host }}:/www/wp-content/plugins"
