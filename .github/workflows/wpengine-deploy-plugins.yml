@@ -52,6 +52,6 @@ jobs:
     - run: |
         rsync -chaviP --delete --stats --no-times --no-perms \
           -e 'ssh -i ~/.ssh/deploy-wpengine' \
-          --exclude /wp-content/plugins/backwpup/ \
-          --exclude /wp-content/plugins/updraftplus/ \
+          --exclude /backwpup/ \
+          --exclude /updraftplus/ \
           wp-content/plugins/ "${{ inputs.env_install }}@${{ inputs.env_ssh_host }}:/sites/${{ inputs.env_install }}/wp-content/plugins"
