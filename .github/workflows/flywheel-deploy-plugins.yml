@@ -24,11 +24,11 @@ jobs:
     if: always()
     steps:
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
       with:
         fetch-depth: '0'
 
-    - uses: benoitchantre/setup-ssh-authentication-action@1.0.0
+    - uses: benoitchantre/setup-ssh-authentication-action@1.0.1
       with:
         private-key: ${{ secrets.flywheel_ssh_key_private }}
         private-key-name: deploy-flywheel
